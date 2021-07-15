@@ -6,3 +6,35 @@
 > View(penguins)
 > ggplot(data = penguins)+geom_point(mapping = aes(x=flipper_length_mm, y=body_mass_g))
 > ggplot(data=penguins)+geom_point(mapping=aes(x=bill_length_mm, y=bill_depth_mm))
+
+Visualising the relationships in hotel_bookings data
+
+Scenario:
+In this scenario, you are a junior data analyst working for a hotel booking company. 
+You have cleaned and manipulated your data, and gotten some initial insights you would like to share. 
+Now, you are going to create some simple data visualizations with the `ggplot2` package. 
+You will use basic `ggplot2` syntax and troubleshoot some common errors you might encounter.
+
+## Step 1: Import your data
+> hotel_bookings = read.csv("C:/Users/vgupt/Desktop/Coursera/R/hotel_bookings.csv")
+
+## Step 2: Look at a sample of your data
+> head(hotel_bookings)
+
+## Step 3: Install and load the 'ggplot2' package
+> install.packages('ggplot2')
+> library(ggplot2)
+
+## Step 4: Begin creating a plot
+> ggplot(data = hotel_bookings)+geom_point(mapping = aes(x=lead_time, y= children))
+
+On the x-axis, the plot shows how far in advance a booking is made, with the bookings furthest to the right happening the most in advance. 
+On the y-axis it shows how many children there are in a party.
+
+The plot reveals that your stakeholder's hypothesis is incorrect. 
+You report back to your stakeholder that many of the advanced bookings are being made by people with 0 children.
+
+Now try mapping 'stays_in_weekend_nights' on the x-axis and 'children' on the y-axis by filling out the remainder of the code below.
+> ggplot(data=hotel_bookings)+geom_point(mapping = aes(x=stays_in_weekend_nights, y=children))
+
+You will discover that guests with no children book most of the weekend nights. So you can target that group in a new marketing campaign.
