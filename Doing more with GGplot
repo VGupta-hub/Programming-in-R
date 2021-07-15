@@ -1,0 +1,3 @@
+Plotting trend line with geom_smooth in a scatter plot
+
+ggplot(data = penguins)+geom_point(mapping = aes(x=flipper_length_mm, y=body_mass_g, color=species))+geom_smooth(mapping = aes(x=flipper_length_mm, y=body_mass_g), color="purple")
